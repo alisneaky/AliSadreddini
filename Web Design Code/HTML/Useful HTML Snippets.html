@@ -1,0 +1,56 @@
+<!-- 
+Faster page load hack
+
+This empty conditional comment hack is used to basically increase performance of your site. When conditional comments are used on your site, for example, for an ie6 conditional stylesheet, it will block further downloads until the css files are fully downloaded, hence increasing load time. To solve this issue, an empty conditional comment, like below, is used before any css is loaded in the document, and the problem will be solved! For further reading, check out this article.
+ -->
+<!--[if IE]><![endif]-->
+<!-- ********************************************************************************************************************************************************** -->
+<!-- 
+Favicon and Apple icons
+
+The favicon is pretty much normality these day. the interesting bit here is the apple-touch-icon which is used if you save a bookmark to your home screen on an apple touch device such as an iPad or iPhone. Interestingly enough, android also supports its usage. As far as I can tell, the apple-touch-icon size is 60px by 60px.As the comment says, if your icons are in the root of your domain, these links aren’t required.
+ -->
+<!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!-- ********************************************************************************************************************************************************** -->
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- ********************************************************************************************************************************************************** -->
+<!-- Conditional Body tag to apply css classes based on the version of IE being used. -->
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<!-- ********************************************************************************************************************************************************** -->
+<!-- 
+jQuery loading fallback
+
+A vast majority of sites these days make use of the jQuery JavaScript library. A vast majority also make use of Google’s hosted version of the library for faster loading speed’s, and better cross site caching. However, what if there is ever a problem and jQuery is not loaded from Google? Well here is your backup. What it basically does is check if jQuery is loaded from Google. If not, then we load it locally from our own version of jQuery.
+ -->
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="js/jquery-1.9.0.min.js"><\/script>')</script>
+<!-- ********************************************************************************************************************************************************** -->
+<!-- 
+Optimised Google Analytics
+
+Google Analytics is a very popular tool for tracking your website’s user behaviour, and visits. This is simply an optimised version of Google’s asynchronous tracking snippet. To learn what has been optimised, and why it is faster than Google’s own version, read the article here.
+ -->
+<!-- asynchronous google analytics
+change the UA-XXXXX-X to be your site's ID -->
+<script>
+ var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+ (function(d, t) {
+  var g = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  g.async = true;
+  g.src = '//www.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g, s);
+ })(document, 'script');
+</script>
+<!-- ********************************************************************************************************************************************************** -->
+
+

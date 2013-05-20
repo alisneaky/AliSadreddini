@@ -1,0 +1,7 @@
+module SyncService
+{
+    interface Sync
+    {
+       long getOffset();
+    };
+};
